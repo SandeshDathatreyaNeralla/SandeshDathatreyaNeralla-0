@@ -1,0 +1,80 @@
+#bgimg{
+    background-image: url("https://img.freepik.com/free-vector/hand-painted-watercolor-abstract-watercolor-background_23-2149001486.jpg?size=626&ext=jpg&ga=GA1.2.1181611881.1668490059");
+    height:100vh;
+    width:100vw;
+    background-size:cover;
+}
+.four{
+    font-size: larger;
+    font-family: 'Times New Roman';
+    text-align: justify;
+    display: block;
+
+}
+.three{
+    font: size 80%;
+    font-family: 'Times New Roman';
+    color:blue;
+    text-align: center;
+}
+
+p{
+    font: medium;
+    text-align:justify;
+   
+}
+.pre{
+    text-align: left;
+}
+
+.one{
+    text-align:  justify;
+    
+}
+table{
+    text-align: center;
+    border-collapse: collapse;
+}
+tr:nth-child(odd){background-color:lightgray;}
+tr:nth-child(even){background-color: white;}
+td{
+    text-align: center;
+}
+#one{
+    background-color:gray;
+    text-align: center;
+    padding-top:50px;
+
+}
+.five{
+    color:red;
+}
+.six{
+    width:100%;
+}
+.seven{
+    text-align: left;
+}
+#four{
+    background-color: white;
+    width:40%;
+    padding-left: 35%;
+    padding-right: 25%;
+  /*  border:1px solid black ;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    outline-style:double;
+    outline-color:blue; */
+}
+.eight{
+    cursor:pointer;
+}
+#two{
+    background-color: grey;
+    text-align: center;
+}
+/*#three{
+    text-align: left;
+}*/

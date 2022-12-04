@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Blog</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="bgimg">
+    <div style="overflow-y: auto;">
+    <div id="four">
+    <h1 class="three">How to send multiple emails simple way using python</h1><marquee scrollamount = "20" bgcolor="yellow" direction = "right" height ="50px" behavior = "alternate" loop = "3">CODEGNAN BLOG</marquee>
+    <p class="seven">Last updated on March 4, 2021, 2:57 p.m. 6765 Views</p>
+    <img src="img3/Kirandeep_author_name.jpg" alt="Kirandeep_author_name" align="left"><br><br><br><br>
+      <p><pre><span class="five">Kirandeep Kaur</span>|in
+      <br>3+ Technical Content Writer. and who is passionate about his career</pre></p>
+                              <!-- <div align="left" id="three">
+                                    <ul style="list-style-type:none;">
+                                        <li><a href=https://codegnan.com/blog/pytorch-vs-tensorflow-everything-you-need-to-know>python libraries</a></li>
+                                        <li><a href=https://codegnan.com/blog/why-django-is-the-best-framework-for-python-web-development>web development with python</a></li>
+                                        <li><a href=https://codegnan.com/blog/how-to-send-multiple-emails-simple-way-using-python>python tutorias</a></li>
+                                        <li><a href=https://codegnan.com/blog/python-vs-java-vs-php-ultimate-guide>introduction to python</a></li>
+                                        <li><a href="#">interview Questions</a></li>
+                                        <li><a href="#">Tutorials</a></li>
+
+
+
+
+                                    </ul>
+                                    <div align="right" id="three">
+                                    <h16>Blog categories</h16>
+                                    <ul style="list-style-type:none">
+                                        <li>python libraries</li>
+                                        <li>web development with python</li>
+                                        <li>python tutorials</li>
+                                        <li>introduction to python</li>
+                                        <div align="right">
+                                             <a href ="https://codegnan.com/blog/">see more</a>
+
+                                        </div>
+                                    </div>
+
+
+                                    </ul>
+
+                                </div>-->
+ <div class="six" align=" left">
+    <img src="img3/how-to-send-multiple-emails-simple-way-using-python.jpg" alt="how-to-send-multiple-emails-simple-way-using-python" width="100%" height="350px">
+    <h2 class="four">Using python send an email</h2>
+    <p>To check and reply to the emails is a big-time draining. Obviously, you cannot write a program to handle all your emails because each email requires its own response. But if you know how to write programs that can send and receive emails, you can also automate loads of email-related activities.</p>
+    <p>For example, you might have a spreadsheet having details of customer records and you want to send each customer a personalized message. Commercial software might be able to do this for you but it will charge you more. In such cases, you can write your own program to send these personalized emails, saving yourself a lot of time copying and pasting form emails.</p>
+    <p>Several computer programs can even notify you of things when you are away from your computer. You don't want to return to your machine every few minutes to check the state of the program while you're automating a process that takes a couple of hours to complete. Instead, when it's finished, the software will only text your number, allowing you to work on more meaningful items while you are away from your device. Isn’t it a good deal?</p> 
+    <h3 class="four">SMTP in Python Email</h3>
+    <p>SMTP determines how to format, encrypt and send email messages between mail servers, and all the other information that your system manages after you have pressed Send. However, you do not need to know this technical information, since the smtplib module from Python simplifies them into a few functions.</p>
+    <p>SMTP works with only sending emails to everyone. A separate protocol, called IMAP, deals with email retrieval sent to you and is defined in IMAP.</p>
+    <h4 class="four">smtplib Overview</h4>
+    <p>The smtplib module defines an SMTP client session object that can be used to send mail to any Internet machine with an SMTP or ESMTP listener daemon. SMTP stands for Simple Mail Transfer Protocol.0020. The smtplib module is useful for communicating with mail servers to send mail. Sending mail is done with Python’s smtplib using an SMTP server. Actual usage varies depending on the complexity of the email and settings of the email server, the instructions here are based on sending email through Gmail.</p>
+    <h5 class="four">Connecting to an SMTP Server</h5>
+    <p>You may be familiar with configuring the SMTP server and connection if you've ever set up Thunderbird, Outlook, or another program to link to your email address. For each email service, these configurations may be different, but a site search for < your service > smtp configurations can bring up the server and port to be used</p>
+     <p>The SMTP account domain name will generally be the name of the domain name of your email provider, with smtp. Gmail's SMTP server, for instance, is at smtp.gmail.com. Some popular email providers and their SMTP servers are listed below. (The port is an integer value and will almost always be 587, which is used by the TLS standard for order encryption.)</p>
+     <table border="1px" align="center">
+        <tr id="two">
+            <th>Provider</th>
+            <th>SMTP server domain name</th>
+        </tr>    
+        <tr>    
+            <td>Gmail</td>
+            <td>smtp.gmail.com</td>
+        </tr>    
+        <tr>   
+            <td>Outlook.com/Hotmail.com</td>
+            <td>smtp-mail.outlook.com</td>
+        </tr>    
+            
+        <tr>
+            <td>Yahoo Mail</td>
+            <td>smtp.mail.yahoo.com</td>
+        </tr>
+
+        <tr> 
+            <td>AT&T</td>
+            <td>smpt.mail.att.net (port 465)</td>
+        </tr>  
+
+        <tr>
+            <td>Comcast</td>
+            <td>smtp.comcast.net</td>
+        </tr> 
+
+        <tr>  
+            <td>Verizon</td>
+            <td>smtp.verizon.net (port 465)</td>
+        </tr>  
+
+    </table>
+<p>Create an SMTP object by calling smptlib.SMTP(), passing the domain name as a string argument and passing the port as an integer argument until you have the domain name and port information for your email provider. The SMTP object represents an SMTP mail server link and has email sending methods.</p>
+<h6 class="four">Connecting to IMAP Server</h6>
+<p>Just when you need an SMTP object to link and send emails to an SMTP server, you need an IMAPClient object to link and receive emails from an IMAP server. Next, you'll need the IMAP server domain name for your email provider. It would be different from the domain name of the SMTP server. For many popular email providers, the table below lists the IMAP servers.</p>
+
+
+<table  align="center" class="one" border="1px">
+    <tr id="two">
+        <th>Provider</th>
+        <th>IMAP server domain name</th>
+    </tr>
+    <tr>
+        <td>Gmail</td>
+        <td>imap.gmail.com</td>
+    </tr>
+    <tr>
+        <td>Outlook.com/Hotmail.com</td>
+        <td>imap-mail.outlook.com</td>
+    </tr>
+    <tr>
+        <td>Yahoo Mail</td>
+        <td>imap.mail.yahoo.com</td>
+    </tr>
+    <tr>
+        <td>AT&T</td>
+        <td>imap.mail.att.net</td>
+    </tr>
+    <tr>
+        <td>Comcast</td>
+        <td>imap.comcast.net</td>
+
+    </tr>
+    <tr>
+        <td>Verizon</td>
+        <td>incoming.verizon.net</td>
+    </tr>
+</table>
+
+<p>Once you have the domain name of the IMAP server, call the IMAP client.IMAPClient() function to create an IMAPClient object. Most email providers require SSL encryption, so pass the ssl=True keyword argument.</p>
+<h7><b class="four">smtplib Usage</b></h7>
+<p>Firstly, create an SMTP object and each object is used for connection with one server.</p>
+
+<pre><p>
+    import smtplib
+    
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    
+    #Next, log in to the server
+    
+    server.login("youremailusername", "password")
+    
+    #Send the mail
+    
+    msg = "
+    
+    Hello!" # The /n separates the message from the headers
+    
+    server.sendmail("you@gmail.com", "target@example.com", msg)</pre></p>
+    
+    <p>If you want to include From, To and Subject headers, use the email package because smtplib does not modify the contents or headers at all.</p>
+   <h8 class="four"><b>Email Package Overview</b></h8>
+   <p>Python’s email package contains many classes and functions for composing and parsing email messages</p>
+   <h9 class="four"><b>Email Package Usage</b></h9>
+   <p>We’ll start by only importing only the classes we need; this also saves us from having to use the full module name later.</p>
+
+    <pre><p>
+    from email.MIMEMultipart import MIMEMultipart
+    
+    from email.MIMEText import MIMEText
+    
+    Then compose some of the basic message headers:
+    
+    fromaddr = "you@gmail.com"
+    
+    toaddr = "target@example.com"
+    
+    msg = MIMEMultipart()
+    
+    msg['From'] = fromaddr
+    
+    msg['To'] = toaddr
+    
+    msg['Subject'] = "Python email"</p></pre>
+    
+    <p>Next, attach the body of the email to the MIME message:</p>
+    <pre><p>
+    body = "Python test mail"
+    
+    msg.attach(MIMEText(body, 'plain'))</pre></p>
+    
+    <p>For sending the mail, we must convert the object to a string, and then use the same procedure as above to send using the SMTP server.</p>
+    <pre><p>
+    
+    import smtplib
+    
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    
+    server.ehlo()
+    
+    server.starttls()
+    
+    server.ehlo()
+    
+    server.login("youremailusername", "password")
+    
+    text = msg.as_string()
+    
+    server.sendmail(fromaddr, toaddr, text)</p></pre>
+    <h10 class="four"><b>Verify an email address</b></h10>
+    <p>The SMTP protocol includes a command to ask a server whether an address is valid. Usually, VRFY is disabled to prevent spammers from finding legitimate email addresses, but if it is enabled you can ask the server about an address and receive a status code indicating validity along with the user’s full name.</p>
+
+<pre align="left"></p>
+        import smtplib
+        
+        server = smtplib.SMTP('mail')
+        
+        server.set_debuglevel(True)  # show communication with the server
+        
+        try:
+        
+            dhellmann_result = server.verify('dhellmann')
+        
+            notthere_result = server.verify('notthere')
+        
+        finally:
+        
+            server.quit()
+        
+        print 'dhellmann:', dhellmann_result
+        
+        print 'notthere :', notthere_result
+        
+        <h10 class="four"><b>sending an email using python</b></h10>
+
+        import smtplib 
+        
+        def sendemail(from_addr, to_addr_list, cc_addr_list,
+        
+        subject, message,
+        
+        login, password,
+        
+        smtpserver='smtp.gmail.com:587'):
+        
+            header  = 'From: %s
+        
+        ' % from_addr
+        
+            header += 'To: %s
+        
+        ' % ','.join(to_addr_list)
+        
+            header += 'Cc: %s
+        
+        ' % ','.join(cc_addr_list)
+        
+            header += 'Subject: %s
+        
+        ' % subject
+        
+            message = header + message 
+        
+            server = smtplib.SMTP(smtpserver)
+        
+            server.starttls()
+        
+            server.login(login,password)
+        
+            problems = server.sendmail(from_addr, to_addr_list, message)
+        
+            server.quit()</p></pre>
+            <h11 class="four">Example Usage of above script</h11>
+            <pre><p>
+      sendemail(from_addr    = contact@codegnan.com', 
+
+                to_addr_list = ['codegnan@gmail.com'],
+      
+                cc_addr_list = ['codegnan@xx.co.in'], 
+      
+                subject      = 'Hello', 
+      
+                message      = 'Hello from a python function', 
+      
+                login        = 'pythonuser', 
+      
+                password     = 'XXXXX')</p></pre>
+                <h12 class="four"><b>Sample Email Received</b></h12>
+                <pre><p>
+          sendemail(from_addr    = 'python@RC.net', 
+
+                    to_addr_list = ['RC@gmail.com'],
+          
+                    cc_addr_list = ['RC@xx.co.uk'], 
+          
+                    subject      = 'Howdy', 
+          
+                    message      = 'Howdy from a python function', 
+          
+                    login        = 'pythonuser', 
+          
+                    password     = 'XXXXX')</p></pre>
+                    <h13 class="four"><b>Sending multiple emails (sending bulk emails)</b></h13>
+                    <p>The code example below shows you how to open a CSV file and loop (skipping the header row) over its content lines. We have printed Sending Email to ... to make sure the coding works properly before you send emails to all your contacts. For each touch, which we can later substitute with features that send emails:</p>
+
+                       <pre><p> 
+                        import csv
+                        
+                        with open("contacts_file.csv") as file:
+                        
+                        reader = csv.reader(file)
+                        
+                        next(reader)  # Skip header row
+                        
+                        for name, email, grade in reader:
+                        
+                        print(f"Sending email to {name}")
+                        
+                        # Send an email here</pre></p>
+                        
+                        <p>As per the above example, using open(filename) as a file: ensures that the file closes at the end of the code block. CSV.reader() makes reading a CSV file line by line and extracting its values fast. The next(reader) line skips the header row, so that the next line for the reader's name, email, grade: breaks subsequent rows at each comma, and preserves the resulting values for the current contact's name, email, and grade strings. If the values in your CSV file contain whitespace on one or both sides, you can use the.strip() method to erase them.</p>
+
+                       <div>
+
+                        <h14 class="four"><b>Helpful links</b></h14>
+
+                    </div><br>
+
+
+                <div>
+
+                             <a href="https://pypi.org/project/django-simple-bulk-emailer/">Sending bulk emails through Django</a>
+
+                            </div><br>
+
+                        <div>
+
+                            <a href="https://www.youtube.com/watch?v=NUokWZHNQm0">How to Send Automated Emails with Python</a>
+
+                        </div><br>
+
+                          <div>
+
+                        <h15 class="four"><b>Final Words</b></h15>
+
+                            <p>With this blog, you are now aware to start a secure SMTP connection and send personalized bulk emails to the people in your email list. If you are stuck in any problem while writing code, you could contact us. Our Python experts will help you get rid of any problem. Enjoy sending emails with Python.</p>
+
+                            <p>If you are planning to <em>learn Python</em> or looking for a lucrative career in <u><a href="https://www.coursera.org/learn/python-for-applied-data-science-ai">Python or data science</a></u>, then get back to us for the head to toe <u><a href="https://codegnan.com/python-training-institute-vijayawada/">training in Python</a></u>. We, at Codegnan, have the full-fledged Python MTA certification training module for the upcoming Pythonists where they will gain an understanding of Python and you will be able to solve logical problems quickly. You will understand the working of various Python libraries like SciPy, NumPy, Matplotlib, Lambda function, etc., and avail them to futureproof your career in various domains of Python like Data Science, Machine Learning, and Artificial Intelligence.</p>
+ 
+                            <p>Do you know how much a <strong>Python developer</strong> earns in India? A Python developer in India earns around <mark>427,293 INR to 1,150,000.</mark></p>
+                            
+                            <p>What are you waiting for then? A lucrative and futureproof career in Python is waiting for you! Get back to us, we’ll help you merge with other expert Pythonists.</p>
+                            <p>we can also learn <abbr title = "Hyper Text MarkUP Language">html</abbr>,<abbr title ="cascading style sheets">css</abbr>,<abbr </p>
+                        </div>
+                        <p><mark>If you Like the article and if you need more articles like this please fill the form</mark></p>
+                        <form align="left">
+                            Name:<input type="text" placeholder="Fullname"><br><br>
+                            Mobile-No:<input type="number" placeholder="+91-914445678"><br><br>
+                            Email:<input type="Email"   placeholder="sandesh@gmail.com"><br><br>
+                            <button class="eight" type="button">SUBMIT</button>
+                          </form><br>
+                          
+
+
+
+</div>
+</div>
+</div>
+</div>
+
+
+</body>
+</html>
